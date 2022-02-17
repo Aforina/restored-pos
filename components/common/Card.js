@@ -13,7 +13,7 @@ const Card = ({
     <div
       className={`drop-shadow-md hover:drop-shadow-xl relative ${extraClassNames}`}
     >
-      <div className='text-center p-2 pt-4 sm:p-8 text-xs sm:text-base'>
+      <div className='text-center p-2 pt-4 sm:p-8 text-xs sm:text-base cursor-default'>
         <h1 className={`text-3xl sm:text-4xl font-semibold ${priceProperties}`}>
           {price}
         </h1>

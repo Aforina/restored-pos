@@ -162,18 +162,20 @@ const SelfEmployedTariffs = () => {
             priceProperties='text-[#FAAC78]'
             buttonProperties='bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white'
           />
-          <Card
-            price={'102,85€'}
-            title={'Semanal'}
-            subtitle={'Seguimiento de Tráfico'}
-            details={''}
-            details2={''}
-            buttonText={'CONTRATAR'}
-            extraClassNames='bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white h-60 w-40'
-            priceProperties='text-white'
-            buttonProperties='bg-white text-[#FAAC78]'
-          />
         </div>
+        <div className='pt-6'>
+          <Card
+              price={'102,85€'}
+              title={'Semanal'}
+              subtitle={'Seguimiento de Tráfico'}
+              details={''}
+              details2={''}
+              buttonText={'CONTRATAR'}
+              extraClassNames='bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white h-60 w-40'
+              priceProperties='text-white'
+              buttonProperties='bg-white text-[#FAAC78]'
+            />
+        </div>   
       </div>
     </div>
   )
