@@ -15,10 +15,10 @@ const Hero = () => {
             <form>
               <div className='grid grid-rows-2 gap-y-4 px-12'>
                 <label className='bg-white h-full text-center text-black grid content-center py-4'>
-                  <input type='text' name='web' placeholder='www.ejemplo.com'  onFocus={(e) => e.target.placeholder = ""} className='h-full outline-0 text-center'/>
+                  <input type='text' name='web' placeholder='www.ejemplo.com' onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'www.ejemplo.com'} className='h-full outline-0 text-center bg-white'/>
                 </label>
                 <label className='bg-white h-full text-center text-black grid content-center'>
-                  <input type='text' name='correo' placeholder='email@gmail.com'  onFocus={(e) => e.target.placeholder = ""} className='h-full outline-0 text-center' />
+                  <input type='text' name='correo' placeholder='email@gmail.com'  onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'email@gmail.com'} className='h-full outline-0 text-center bg-white' />
                 </label>
                 <p className='text-white text-center text-lg'>
                   <input type='checkbox' className='mr-1'/>
