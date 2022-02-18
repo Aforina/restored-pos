@@ -6,7 +6,7 @@ const SelfEmployedTariffs = ({refProp}) => {
     <div
       id='selfemployedtariffs'
       ref={refProp}
-      className='pb-8 sm:pb-20 w-screen relative max-w-xs sm:max-w-7xl mx-auto place-self-center text-[#4B505C]'
+      className='pb-8 sm:pb-20 w-screen relative max-w-[90%] sm:max-w-7xl mx-auto place-self-center text-[#4B505C]'
     >
       <h1 className='text-2xl sm:text-4xl font-bold pb-14 text-center'>
         Tarifas Para Autónomos
@@ -165,7 +165,7 @@ const SelfEmployedTariffs = ({refProp}) => {
             buttonProperties='bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white'
           />
         </div>
-        <div className='pt-6'>
+        <div className='flex justify-center pt-6'>
           <Card
               price={'102,85€'}
               title={'Semanal'}

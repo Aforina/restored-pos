@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Footer = () => {
   return (
     <div>
@@ -8,9 +10,17 @@ const Footer = () => {
       >
         <div className='w-full max-w-7xl mx-auto flex flex-row px-4 py-8 font-semibold'>
           <div className='mx-auto flex flex-col md:flex-row cursor-pointer gap-12 text-xl'>
-            <p className='hover:text-gray-300'>Servicios</p>
-            <p className='hover:text-gray-300'>Tarifas</p>
-            <p className='hover:text-gray-300'>Contacta</p>
+            <div className='hover:text-gray-300'>
+              <p>Servicios</p>
+            </div>
+
+            <div className='hover:text-gray-300'>
+              <p>Tarifas</p>
+            </div>
+
+            <div className='hover:text-gray-300'>
+              <p>Contacta</p>
+            </div>
           </div>
           <div className='ml-auto flex flex-col md:flex-row cursor-pointer gap-12'>
             <p>PosicionamientoWeb24</p>
@@ -20,7 +30,7 @@ const Footer = () => {
       {/*Mobile*/}
       <div className='md:hidden w-screen bg-[#4B505C] text-white sm:mt-8 text-xl tracking-wide text-center'>
         <div className='w-full max-w-4xl flex flex-col py-8 font-semibold gap-y-3'>
-          <div className='flex flex-col space-y-3'>
+          <div className='flex flex-col space-y-6'>
             <p>Servicios</p>
             <p>Tarifas</p>
             <p>Contacta</p>

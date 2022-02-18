@@ -1,7 +1,21 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
+import * as Yup from 'yup'
 
+
+const FormSchema = Yup.object().shape({
+  name: Yup.string()
+    .required('Campo Obligatorio'),
+  email: Yup.string()
+    .email('Por favor introduce un correo válido')
+    .required('Campo Obligatorio'),
+  number: Yup.number(),
+  web: Yup.string().required('Campo Obligatorio'),
+  matter: Yup.string().required('Campo Obligatorio'),
+  message: Yup.string().required('Campo Obligatorio'),
+  terms: Yup.boolean().oneOf([true], 'Por favor acepta los términos y condiciones')
+})
 
 const ContactForm = ({refProp}) => {
   const [submittedForm, changeSubmittedForm] = useState(false)
@@ -9,7 +23,7 @@ const ContactForm = ({refProp}) => {
     <div
       id='contactForm'
       ref={refProp}
-      className=' sm:pb-20 pt-3 w-screen relative max-w-3xl mx-auto place-self-center text-[#4B505C] '
+      className=' sm:pb-20 pt-3 w-screen relative max-w-3xl mx-auto place-self-center text-[#4B505C]'
     >
       <h1 className='text-2xl sm:text-4xl font-bold text-center pb-14'>
         Escríbenos
@@ -26,64 +40,14 @@ const ContactForm = ({refProp}) => {
             message: '',
             terms: ''
           }}
-          validate={valores => {
-            const errores = {}
-
-            // Name Validation
-            if (!valores.name) {
-              errores.name = 'Este campo es obligatorio'
-            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
-              errores.name = 'Por favor introduce un nombre válido'
-            }
-
-            // Email Validation
-            if (!valores.email) {
-              errores.email = 'Este campo es obligatorio'
-            } else if (
-              !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-                valores.email
-              )
-            ) {
-              errores.email = 'Por favor introduce un correo válido'
-            }
-
-            // Number Validation
-            if (
-              !/^[0-9]{2,3}-? ?[0-9]{6,7}$/.test(valores.number) &&
-              valores.number !== ''
-            ) {
-              errores.number = 'Por favor introduce un número válido'
-            }
-
-            // Web Validation
-            if (!valores.web) {
-              errores.web = 'Este campo es obligatorio'
-            }
-
-            // Matter Validation
-            if (!valores.matter) {
-              errores.matter = 'Este campo es obligatorio'
-            }
-
-            // Message Validation
-            if (!valores.message) {
-              errores.message = 'Este campo es obligatorio'
-            }
-
-            // Terms and Conditions Validation
-            if (!valores.terms) {
-              errores.terms = ''
-            }
-
-            return errores
-          }}
-          onSubmit={(valores, { resetForm }) => {
+          validationSchema = {FormSchema}
+          onSubmit={( {values, resetForm }) => {
             resetForm()
             changeSubmittedForm(true)
             setTimeout(() => changeSubmittedForm(false), 5000)
           }}
         >
-          {({ errors }) => (
+          {({ values, errors, handleChange, setFieldValue }) => (
             <Form className='formulario'>
               <div className='relative bg-white drop-shadow-md'>
                 <div className='absolute grid grid-cols-1 top-20 -left-[5vw] w-2/5 p-8 pb-24 space-y-4 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
@@ -111,7 +75,9 @@ const ContactForm = ({refProp}) => {
                           type='text'
                           id='name'
                           name='name'
+                          onChange={handleChange}
                           placeholder='Nombre'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -129,7 +95,9 @@ const ContactForm = ({refProp}) => {
                           type='text'
                           id='email'
                           name='email'
+                          onChange={handleChange}
                           placeholder='Correo'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -147,7 +115,9 @@ const ContactForm = ({refProp}) => {
                           type='text'
                           id='number'
                           name='number'
+                          onChange={handleChange}
                           placeholder='Teléfono'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -165,7 +135,9 @@ const ContactForm = ({refProp}) => {
                           type='text'
                           id='web'
                           name='web'
+                          onChange={handleChange}
                           placeholder='Web'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -183,7 +155,9 @@ const ContactForm = ({refProp}) => {
                           type='text'
                           id='matter'
                           name='matter'
+                          onChange={handleChange}
                           placeholder='Asunto'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -202,7 +176,9 @@ const ContactForm = ({refProp}) => {
                           id='message'
                           name='message'
                           as='textarea'
+                          onChange={handleChange}
                           placeholder='Deja tu mensaje'
+                          className='primaryInput w-full h-full outline-0'
                         />
                       </div>
                       <div className='text-red-600 font-weight: 600'>
@@ -219,10 +195,19 @@ const ContactForm = ({refProp}) => {
                         <label className='w-full'>
                           <Field
                             type='checkbox'
+                            onChange={() => {
+                              if (values.terms) {
+                                setFieldValue('terms', false)
+                              }
+                              if (!values.terms) {
+                                setFieldValue('terms', true)
+                              }
+                            }}
                             id='terms'
+                            checked={values.terms}
+                            className='w-5 h-5 mr-3'
                             name='terms'
                             value='terms'
-                            className='mr-1'
                           />
                           Acepto Términos y Condiciones
                         </label>
@@ -238,8 +223,7 @@ const ContactForm = ({refProp}) => {
                       <div className='text-center px-3 justify-center md:text-4 lg:text-base xl:text-xl cursor-pointers tracking-wider'>
                         <nav className='w-full h-12 mt-8 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
                           <button
-                            className='w-full h-full font-semibold inline-block align-middle'
-                            type='contratar'
+                            type='submit' className='w-full h-full font-semibold inline-block align-middle'
                           >
                             ENVIAR
                           </button>
@@ -260,7 +244,7 @@ const ContactForm = ({refProp}) => {
       <div className='sm:hidden'>
         <div className='justify-center mx-4 self-center items-center bg-white py-10'>
           <div className='divide-y'>
-            <div className='w-full h-14 rounded-lg my-3 '>
+            <div className='w-full h-14 rounded-lg mb-3 '>
               <p className='pl-3 w-full h-full'>Nombre</p>
             </div>
             <div className='w-full h-14 rounded-lg my-3'>
@@ -293,7 +277,7 @@ const ContactForm = ({refProp}) => {
             </div>
           </div>
         </div>
-        <div className='grid grid-cols-1 top-20 w-screen p-8 space-y-4 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
+        <div className='grid grid-cols-1 w-screen pt-4 px-8 pb-12 space-y-6 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
           <h1 className='text-3xl my-5 font-semibold text-center'>
             Información
           </h1>

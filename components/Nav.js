@@ -1,28 +1,34 @@
 import { FaBars } from 'react-icons/fa'
 import React, { useState } from 'react'
 
-const Nav = ({servicesRef, tariffsRef, contactRef}) => {
+const Nav = ({ servicesRef, tariffsRef, contactRef }) => {
   const [showMenu, setShowMenu] = useState(false)
 
-  let menu
   let menuMask
 
   if(showMenu){
-    menu = 
-    <div
-      className='fixed bg-white bg-opacity-10 top-0 left-0 w-2/5 h-full z-50'
-    >
-    </div>
-
+  
     menuMask = 
     <div
-      className='bg-black opacity-40 fixed top-0 left-0 w-full h-screen z-50'
+      className='bg-black opacity-60 absolute top-0 left-0 w-screen h-screen z-50'
       onClick={() => setShowMenu(false)}
     >
-      <div className='space-y-8'>
-        <p className='text-white z-60 opacity-100 absolute right-20 py-4 text-center'>Servicios</p>
-        <p className='text-white z-60 opacity-100 absoltue right-20 py-4 text-center'>Tarifas</p>
-        <p className='text-white z-60 opacity-100 absolute right-20 py-4 text-center'>Contacto</p>
+      <div className='space-y-8 w-screen h-screen grid grid-cols-1 content-center justify-center align-middle'>
+        <div className='text-white z-60 py-4 text-center' onClick={() => {
+          servicesRef.current.scrollIntoView({ behavior: 'smooth' })
+        }}>
+          <p>Servicios</p>
+        </div>
+        <div className='text-white z-60 py-4 text-center' onClick={() => {
+          tariffsRef.current.scrollIntoView({ behavior: 'smooth' })
+        }}>
+          <p>Tarifas</p>
+        </div>
+        <div className='text-white z-60 py-4 text-center' onClick={() => {
+          contactRef.current.scrollIntoView({ behavior: 'smooth' })
+        }}>
+          <p>Contacto</p>
+        </div>
       </div>
 
     </div>
@@ -65,7 +71,6 @@ const Nav = ({servicesRef, tariffsRef, contactRef}) => {
           />
         </div>
         { menuMask }
-        { menu }
       </div>
     </div>
   )
