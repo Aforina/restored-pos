@@ -44,22 +44,25 @@ const Hero = () => {
             <h1 className='text-white text-3xl font-semibold mb-10 text-center'>
               ANÁLISIS SEO
             </h1>
-            <div className='grid grid-rows-2 gap-y-4 px-12'>
-              <div className='bg-white h-12 text-center text-gray-300 grid content-center'>
-                www.ejemplo.com
+            <form>
+              <div className='grid grid-rows-2 gap-y-4 px-12'>
+                <label className='bg-white h-12 text-center text-gray-300 grid content-center'>
+                  <input type='text' name='web' placeholder='www.ejemplo.com' onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'www.ejemplo.com'} className='h-full outline-0 text-center bg-white'/>
+                </label>
+                <label className='bg-white h-12 text-center text-gray-300 grid content-center'>
+                  <input type='text' name='correo' placeholder='email@gmail.com'  onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'email@gmail.com'} className='h-full outline-0 text-center bg-white' />
+                </label>
+                <p className='text-white text-center text-md'>                  
+                  <input type='checkbox' className='mr-1'/>
+                  Acepto los Términos y Condiciones
+                </p>
+                <nav className='w-full h-12 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
+                  <button className='w-full h-full font-semibold inline-block align-middle '>
+                    EMPIEZA AHORA
+                  </button>
+                </nav>
               </div>
-              <div className='bg-white h-12 text-center text-gray-300 grid content-center'>
-                email@gmail.com
-              </div>
-              <p className='text-white text-center text-lg'>
-                Acepto los Términos y Condiciones
-              </p>
-              <nav className='w-full h-12 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
-                <button className='w-full h-full font-semibold inline-block align-middle '>
-                  EMPIEZA AHORA
-                </button>
-              </nav>
-            </div>
+            </form>
           </div>
         </div>
       </div>
