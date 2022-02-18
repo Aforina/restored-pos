@@ -60,11 +60,11 @@ const ContactForm = ({refProp}) => {
                   </div>
                   <div className='inline-flex space-x-1'>
                     <FaMapMarkerAlt className='mr-2 mt-1' />
-                    <p>C/ Enmedio 20, Castellón, 12006, España</p>
+                    <p>C/ Herrero 24, Castellón, 12005, España</p>
                   </div>
                   <div className='inline-flex space-x-1'>
                     <FaPhoneAlt className='mr-1 mt-1' />
-                    <p>+34 637 85 22 56</p>
+                    <p>+34 633 79 82 55</p>
                   </div>
                 </div>
                 <div className='w-full justify-center self-center items-center bg-white pt-20 pb-20 pl-72 pr-10 '>
@@ -205,7 +205,7 @@ const ContactForm = ({refProp}) => {
                             }}
                             id='terms'
                             checked={values.terms}
-                            className='w-5 h-5 mr-3'
+                            className='w-4 h-4 mr-3'
                             name='terms'
                             value='terms'
                           />
@@ -222,14 +222,12 @@ const ContactForm = ({refProp}) => {
                       </div>
                       <div className='text-center px-3 justify-center md:text-4 lg:text-base xl:text-xl cursor-pointers tracking-wider'>
                         <nav className='w-full h-12 mt-8 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
-                          <button
-                            type='submit' className='w-full h-full font-semibold inline-block align-middle'
-                          >
-                            ENVIAR
+                          <button className='w-full h-full font-semibold inline-block align-middle'>
+                              <input type='submit' value='ENVIAR' className='cursor-pointer font-semibold'/>
                           </button>
                         </nav>
                         {submittedForm && (
-                        <p className='exito'>¡Formulario enviado con éxito!</p>
+                          <p className='exito'>¡Formulario enviado con éxito!</p>
                         )}
                       </div>
                     </div>
@@ -242,39 +240,56 @@ const ContactForm = ({refProp}) => {
       </div>
       {/*Mobile*/}
       <div className='sm:hidden'>
-        <div className='justify-center mx-4 self-center items-center bg-white py-10'>
-          <div className='divide-y'>
-            <div className='w-full h-14 rounded-lg mb-3 '>
-              <p className='pl-3 w-full h-full'>Nombre</p>
-            </div>
-            <div className='w-full h-14 rounded-lg my-3'>
-              <p className='pl-3 w-full h-full'>Correo Electrónico</p>
-            </div>
-            <div className='w-full h-14 rounded-lg my-3'>
-              <p className='pl-3 w-full h-full'>Teléfono</p>
-            </div>
-            <div className='w-full h-14 rounded-lg my-3'>
-              <p className='pl-3 w-full h-full'>Tu Página Web</p>
-            </div>
-            <div className='w-full h-14 rounded-lg my-3'>
-              <p className='pl-3 w-full h-full'>Asunto</p>
-            </div>
-            <div className='w-full h-14 rounded-lg my-3'>
-              <p className='pl-3 w-full h-full'>Deja tu mensaje</p>
-            </div>
-            <div className='justify-center text-center'>
-              <p className='w-full'>Acepto los Términos y Condiciones</p>
-              <div className='text-center p-3 justify-center md:text-4 lg:text-base xl:text-xl cursor-pointers tracking-wider'>
-                <nav className='w-full h-12 mt-8 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
-                  <button
-                    className='w-full h-full font-semibold inline-block align-middle'
-                    type='contratar'
-                  >
-                    ENVIAR
-                  </button>
-                </nav>
+        <div className='justify-center mx-4 self-center items-center drop-shadow-md bg-white pb-10 pt-4'>
+          <div className='divide-y space-y-2'>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Nombre' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Nombre'} />
+              </label>
+            </form>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Correo Electrónico' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Correo Electrónico'} />
+              </label>
+            </form>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Teléfono' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Teléfono'} />
+              </label>
+            </form>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Tu Página Web' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Tu Página Web'} />
+              </label>
+            </form>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Asunto' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Asunto'} />
+              </label>
+            </form>
+            <form>
+              <label className='w-full h-14 rounded-lg mb-3 '>
+                <input type='text' placeholder='Deja tu mensaje' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Deja tu mensaje'} />
+              </label>
+            </form>
+            <form>
+              <div className='justify-center text-center mt-4'>
+                <p className= 'text-center'>
+                  <input type='checkbox' className='mr-1'/>
+                  Acepto los Términos y Condiciones
+                </p>
+                <div className='text-center px-3 justify-center md:text-4 lg:text-base xl:text-xl cursor-pointers tracking-wider'>
+                  <nav className='w-full h-12 mt-8 bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] text-white rounded-md'>
+                    <button
+                      className='w-full h-full font-semibold inline-block align-middle'
+                      type='submit'
+                    >
+                      ENVIAR
+                    </button>
+                  </nav>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
         <div className='grid grid-cols-1 w-screen pt-4 px-8 pb-12 space-y-6 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
