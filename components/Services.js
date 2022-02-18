@@ -11,7 +11,7 @@ const Services = ({refProp}) => {
         Nuestros Servicios
       </h1>
       {/*mobile*/}
-      <div className='sm:hidden grid grid-cols-1 text-sm'>
+      <div className='md:hidden grid grid-cols-1 text-sm'>
         <div className='flex flex-cols-1 space-x-4 mb-8'>
           <Service
             title={'Informe Mensual de Posicionamiento'}
@@ -58,8 +58,8 @@ const Services = ({refProp}) => {
           />
         </div>
       </div>
-      {/*pc*/}
-      <div className='hidden sm:block'>
+      {/*pc and tablet*/}
+      <div className='hidden md:block md:max-w-3xl lg:max-w-7xl mx-auto'>
         <div className='grid grid-cols-2 gap-2 text-base'>
           <div className='flex flex-cols-2 space-x-10 mr-16 mb-8'>
             <Service

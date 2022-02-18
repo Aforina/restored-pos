@@ -6,12 +6,12 @@ const SelfEmployedTariffs = ({refProp}) => {
     <div
       id='selfemployedtariffs'
       ref={refProp}
-      className='pb-8 sm:pb-20 w-screen relative max-w-[90%] sm:max-w-7xl mx-auto place-self-center text-[#4B505C]'
+      className='pb-8 sm:pb-20 w-screen relative max-w-[90%] lg:max-w-7xl mx-auto place-self-center text-[#4B505C]'
     >
       <h1 className='text-2xl sm:text-4xl font-bold pb-14 text-center'>
         Tarifas Para Autónomos
       </h1>
-      {/*pc*/}
+      {/*PC and tablet*/}
       <div className='hidden sm:block'>
         <div className='grid grid-cols-4 gap-10'>
           <Card

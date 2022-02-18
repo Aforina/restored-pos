@@ -23,7 +23,7 @@ const ContactForm = ({refProp}) => {
     <div
       id='contactForm'
       ref={refProp}
-      className=' sm:pb-20 pt-3 w-screen relative max-w-3xl mx-auto place-self-center text-[#4B505C]'
+      className=' sm:pb-20 pt-3 w-screen relative max-w-4xl mx-auto place-self-center text-[#4B505C]'
     >
       <h1 className='text-2xl sm:text-4xl font-bold text-center pb-14'>
         Escríbenos
@@ -50,25 +50,25 @@ const ContactForm = ({refProp}) => {
           {({ values, errors, handleChange, setFieldValue }) => (
             <Form className='formulario'>
               <div className='relative bg-white drop-shadow-md'>
-                <div className='absolute grid grid-cols-1 top-20 -left-[5vw] w-2/5 p-8 pb-24 space-y-4 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
+                <div className='absolute grid grid-cols-1 top-20 -left-[5vw] w-2/5 p-8 pb-44 space-y-4 text-white bg-gradient-to-b from-[#FFBB8E] to-[#FA8F78] items-center justify-center'>
                   <h1 className='text-3xl my-5 font-semibold text-center '>
                     Información
                   </h1>
-                  <div className='inline-flex space-x-1'>
-                    <FaEnvelope className='mr-1 mt-1' />
-                    <p>info@posicionamientoweb.com</p>
+                  <div className='inline-flex space-x-1 text-lg'>
+                    <FaEnvelope className='mr-1 mt-2' />
+                    <p>info@posicionamientoweb24.com</p>
                   </div>
-                  <div className='inline-flex space-x-1'>
+                  <div className='inline-flex space-x-1 text-lg'>
                     <FaMapMarkerAlt className='mr-2 mt-1' />
                     <p>C/ Herrero 24, Castellón, 12005, España</p>
                   </div>
-                  <div className='inline-flex space-x-1'>
+                  <div className='inline-flex space-x-1 text-lg'>
                     <FaPhoneAlt className='mr-1 mt-1' />
                     <p>+34 633 79 82 55</p>
                   </div>
                 </div>
-                <div className='w-full justify-center self-center items-center bg-white pt-20 pb-20 pl-72 pr-10 '>
-                  <div className='divide-y'>
+                <div className='w-full justify-center self-center items-center bg-white pt-20 pb-20 pl-80 pr-10 text-lg'>
+                  <div className='divide-y space-y-2'>
                     <div>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
@@ -80,7 +80,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='name'
                           component={() => (
@@ -88,8 +90,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
                           type='text'
@@ -100,7 +100,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='email'
                           component={() => (
@@ -108,8 +110,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
                           type='text'
@@ -120,7 +120,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='number'
                           component={() => (
@@ -128,8 +130,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
                           type='text'
@@ -140,7 +140,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='web'
                           component={() => (
@@ -148,8 +150,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
                           type='text'
@@ -160,7 +160,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div className='pb-4'>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='matter'
                           component={() => (
@@ -168,8 +170,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div className='pb-4'>
                       <div className='w-full h-12 rounded-lg'>
                         <Field
                           type='text'
@@ -181,7 +181,9 @@ const ContactForm = ({refProp}) => {
                           className='primaryInput w-full h-full outline-0'
                         />
                       </div>
-                      <div className='text-red-600 font-weight: 600'>
+                    </div>
+                    <div>
+                      <div className='text-red-600 font-weight: 600 pb-1'>
                         <ErrorMessage
                           name='message'
                           component={() => (
@@ -189,8 +191,6 @@ const ContactForm = ({refProp}) => {
                           )}
                         />
                       </div>
-                    </div>
-                    <div>
                       <div className='justify-center text-center pt-4'>
                         <label className='w-full'>
                           <Field
@@ -209,9 +209,9 @@ const ContactForm = ({refProp}) => {
                             name='terms'
                             value='terms'
                           />
-                          Acepto Términos y Condiciones
+                          Acepto los Términos y Condiciones
                         </label>
-                        <div className='text-red-600 font-weight: 600'>
+                        <div className='text-red-600 font-weight: 600 pb-1'>
                           <ErrorMessage
                             name='terms'
                             component={() => (
@@ -268,7 +268,7 @@ const ContactForm = ({refProp}) => {
               </label>
             </form>
             <form>
-              <label className='w-full h-14 rounded-lg mb-3 '>
+              <label className='w-full h-28 rounded-lg mb-3 '>
                 <input type='text' placeholder='Deja tu mensaje' className='pl-3 w-full h-full outline-0 pb-6' onFocus={(e) => e.target.placeholder = ''} onBlur={(e) => e.target.placeholder = 'Deja tu mensaje'} />
               </label>
             </form>

@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className='id=hero'>
       {/*PC*/}
-      <div className='hidden sm:block h-screen w-screen relative overflow-y-hidden'>
+      <div className='hidden lg:block h-screen w-screen relative overflow-y-hidden'>
         <div className=' bg-gray-400 bg-opacity-50 absolute top-0 h-screen z-10 w-screen' />
         <Image src='/hero-cover.jpg' layout='fill' objectFit='cover' />
         <div className='flex flex-col w-screen h-screen absolute z-20 justify-center self-center items-center'>
@@ -35,24 +35,24 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      {/*Mobile*/}
-      <div className='sm:hidden h-screen w-screen relative overflow-y-hidden'>
+      {/*Mobile and tablet*/}
+      <div className='lg:hidden h-screen w-screen relative overflow-y-hidden'>
         <div className=' bg-gray-400 bg-opacity-50 absolute top-0 h-screen z-10 w-screen' />
         <Image src='/hero-cover.jpg' layout='fill' objectFit='cover' />
         <div className='flex flex-col w-screen h-screen absolute z-20 justify-center self-center items-center'>
-          <div className='bg-white bg-opacity-25 py-4'>
-            <h1 className='text-white text-3xl font-semibold mb-10 text-center'>
+          <div className='bg-white bg-opacity-25 py-4 md:py-12 md:px-32'>
+            <h1 className='text-white text-3xl md:text-5xl font-semibold mb-10 text-center'>
               ANÁLISIS SEO
             </h1>
             <form>
-              <div className='grid grid-rows-2 gap-y-4 px-12'>
+              <div className='grid grid-rows-2 gap-y-4 px-12 md:px-20'>
                 <label className='bg-white h-12 text-center text-gray-300 grid content-center'>
                   <input type='text' name='web' placeholder='www.ejemplo.com' onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'www.ejemplo.com'} className='h-full outline-0 text-center bg-white'/>
                 </label>
                 <label className='bg-white h-12 text-center text-gray-300 grid content-center'>
                   <input type='text' name='correo' placeholder='email@gmail.com'  onFocus={(e) => e.target.placeholder = ""} onBlur={(e) => e.target.placeholder = 'email@gmail.com'} className='h-full outline-0 text-center bg-white' />
                 </label>
-                <p className='text-white text-center text-md'>                  
+                <p className='text-white text-center text-md md:text-xl'>                  
                   <input type='checkbox' className='mr-1'/>
                   Acepto los Términos y Condiciones
                 </p>
