@@ -1,9 +1,10 @@
 import Service from './common/Service'
 
-const Services = () => {
+const Services = ({refProp}) => {
   return (
     <div
       id='services'
+      ref={refProp}
       className='w-screen pb-8 sm:pb-20 relative max-w-xs sm:max-w-7xl mx-auto place-self-center text-[#4B505C]'
     >
       <h1 className='py-14 text-2xl sm:text-4xl font-bold text-center'>

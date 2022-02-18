@@ -3,11 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
 
 
-const ContactForm = () => {
+const ContactForm = ({refProp}) => {
   const [submittedForm, changeSubmittedForm] = useState(false)
   return (
     <div
       id='contactForm'
+      ref={refProp}
       className=' sm:pb-20 pt-3 w-screen relative max-w-3xl mx-auto place-self-center text-[#4B505C] '
     >
       <h1 className='text-2xl sm:text-4xl font-bold text-center pb-14'>

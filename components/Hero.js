@@ -4,6 +4,7 @@ import React from 'react'
 const Hero = () => {
   return (
     <div className='id=hero'>
+      {/*PC*/}
       <div className='hidden sm:block h-screen w-screen relative overflow-y-hidden'>
         <div className=' bg-gray-400 bg-opacity-50 absolute top-0 h-screen z-10 w-screen' />
         <Image src='/hero-cover.jpg' layout='fill' objectFit='cover' />
@@ -34,6 +35,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      {/*Mobile*/}
       <div className='sm:hidden h-screen w-screen relative overflow-y-hidden'>
         <div className=' bg-gray-400 bg-opacity-50 absolute top-0 h-screen z-10 w-screen' />
         <Image src='/hero-cover.jpg' layout='fill' objectFit='cover' />

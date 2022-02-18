@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import React, {useState, useRef} from 'react'
-// import { useState, useEffect, useRef } from 'react'
+import React, {useRef} from 'react'
 
 import Hero from '../components/Hero'
 import Nav from '../components/Nav'
@@ -13,6 +12,10 @@ import myComponent from '../components/Map'
 import Footer from '../components/Footer'
 
 export default function Home() {
+  const servicesRef = useRef(null)
+  const tariffsRef = useRef(null)
+  const contactRef = useRef(null)
+
   return (
     <div className='min-h-screen min-w-screen overflow-hidden bg-[#F6F6F6] open-sans'>
       <Head>
@@ -21,14 +24,14 @@ export default function Home() {
       </Head>
       <div className='relative w-screen h-screen overflow-y-hidden'>
         <Hero />
-        <Nav />
+        <Nav servicesRef={servicesRef} tariffsRef={tariffsRef} contactRef={contactRef}/>
       </div>
-      <Services />
-      <SelfEmployedTariffs />
+      <Services refProp={servicesRef}/>
+      <SelfEmployedTariffs refProp={tariffsRef} />
       <PymesTariffs />
       <BusinessTariffs />
-      <ContactForm />
-      {/* <myComponent /> */}
+      <ContactForm refProp={contactRef}/>
+      {/* <myComponent />*/}
       <Footer />
     </div>
   )
